@@ -1,0 +1,12 @@
+# Versions compatibles avec les modèles entraînés (scikit-learn 1.8 / NumPy 2).
+# Python 3.11, 3.12 ou 3.13 recommandé.
+fastapi>=0.111
+uvicorn[standard]>=0.29
+pandas>=2.2
+numpy>=2.0
+scikit-learn==1.8.0
+lightgbm>=4.6
+xgboost>=2.1
+joblib>=1.4
+requests>=2.31
+pydantic>=2.7

@@ -1,0 +1,228 @@
+.page { min-height: 100vh; padding-top: 80px; }
+.inner { max-width: 1300px; margin: 0 auto; padding: 2rem 2.5rem 5rem; }
+
+.header { margin-bottom: 2.5rem; }
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem; letter-spacing: 1px; color: var(--text);
+}
+.sub { color: var(--muted2); margin-top: 4px; margin-bottom: 1.5rem; }
+
+/* Progress */
+.progress {
+  display: flex; align-items: center; gap: 0;
+  max-width: 480px;
+}
+.progressStep {
+  display: flex; align-items: center; gap: 0.6rem; flex: 1;
+}
+.progressDot {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg2); border: 2px solid var(--border);
+  color: var(--muted); font-size: 0.82rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.progressDotActive  { border-color: var(--gold); color: var(--gold); }
+.progressDotCurrent { background: var(--gold); color: #0a0a0f; border-color: var(--gold); }
+.progressLabel { font-size: 0.8rem; color: var(--muted); white-space: nowrap; transition: color 0.3s; }
+.progressLabelActive { color: var(--muted2); }
+.progressLine {
+  flex: 1; height: 2px; background: var(--border); margin: 0 0.5rem; transition: background 0.3s;
+}
+.progressLineActive { background: var(--gold); }
+
+/* Step header */
+.stepHeader { margin-bottom: 1.5rem; }
+.stepTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem;
+}
+.stepSub { color: var(--muted2); font-size: 0.9rem; }
+
+/* Film grid */
+.filmGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+
+.filmCard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all var(--transition);
+}
+.filmCardChosen { border-color: var(--gold); }
+
+.filmPosterWrap { position: relative; aspect-ratio: 2/3; overflow: hidden; background: var(--bg3); }
+.filmPoster { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.filmCard:hover .filmPoster { transform: scale(1.04); }
+
+.filmChosenOverlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+}
+
+.filmInfo { padding: 0.75rem 0.75rem 0.25rem; }
+.filmTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem; font-weight: 700; color: var(--text);
+  margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.filmYear { font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+.filmGenres { display: flex; flex-wrap: wrap; gap: 4px; }
+.filmGenrePill {
+  padding: 2px 7px; border-radius: 20px; border: 1px solid;
+  font-size: 0.65rem; font-weight: 600;
+}
+
+.filmChoices {
+  display: flex; gap: 4px; padding: 0.5rem 0.75rem 0.75rem;
+  justify-content: space-between;
+}
+.choiceBtn {
+  flex: 1; padding: 6px 4px; border-radius: 8px; font-size: 1rem;
+  background: var(--bg3); border: 1px solid var(--border);
+  transition: all 0.15s; display: flex; align-items: center; justify-content: center;
+}
+.choiceBtn:hover { background: var(--bg); border-color: var(--muted); transform: scale(1.1); }
+.choiceBtnActive {
+  background: rgba(212,175,55,0.15) !important;
+  border-color: var(--gold) !important;
+  transform: scale(1.12);
+}
+
+/* Questions */
+.questionsGrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.questionCard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.25rem 1.4rem;
+}
+.questionLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 700; color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+.questionChoices { display: flex; flex-wrap: wrap; gap: 6px; }
+.questionBtn {
+  padding: 6px 14px; border-radius: 8px;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--muted2); font-size: 0.82rem; font-weight: 500;
+  transition: all var(--transition);
+}
+.questionBtn:hover { color: var(--text); border-color: var(--muted); }
+.questionBtnActive {
+  background: rgba(212,175,55,0.15);
+  border-color: var(--gold); color: var(--gold); font-weight: 700;
+}
+
+/* Reco grid */
+.profilCard {
+  background: var(--bg2); border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+}
+.profilLabel { font-size: 0.85rem; color: var(--muted2); }
+.profilBadges { display: flex; flex-wrap: wrap; gap: 6px; }
+.profilBadge {
+  padding: 4px 12px; border-radius: 20px; border: 1px solid;
+  font-size: 0.8rem; font-weight: 600;
+}
+
+.recoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.recoCard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all var(--transition);
+}
+.recoCard:hover { border-color: var(--gold); box-shadow: 0 8px 30px rgba(212,175,55,0.12); }
+
+.recoPosterWrap { position: relative; aspect-ratio: 2/3; background: var(--bg3); }
+.recoPoster { width: 100%; height: 100%; object-fit: cover; }
+.recoRank {
+  position: absolute; top: 8px; left: 8px;
+  background: var(--gold); color: #0a0a0f;
+  font-weight: 800; font-size: 0.75rem;
+  padding: 2px 8px; border-radius: 20px;
+}
+.recoRating {
+  position: absolute; top: 8px; right: 8px;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+  color: #f0c84a; font-size: 0.7rem; font-weight: 700;
+  padding: 2px 7px; border-radius: 20px;
+}
+.recoCompat {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+  padding: 6px 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.recoCompatBar {
+  flex: 1; height: 4px; background: var(--gold); border-radius: 2px;
+}
+.recoCompatPct { font-size: 0.7rem; font-weight: 700; color: var(--gold); white-space: nowrap; }
+
+.recoInfo { padding: 0.7rem 0.75rem 0.8rem; }
+.recoTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem; font-weight: 700; color: var(--text);
+  margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.recoMeta { font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+.recoGenres { display: flex; flex-wrap: wrap; gap: 4px; }
+.recoGenrePill {
+  padding: 2px 7px; border-radius: 20px; border: 1px solid;
+  font-size: 0.65rem; font-weight: 600;
+}
+
+/* Footer */
+.stepFooter {
+  display: flex; justify-content: flex-end; align-items: center;
+  gap: 1rem; padding-top: 0.5rem;
+}
+.nextBtn {
+  padding: 0.8rem 2.5rem; border-radius: 8px;
+  background: linear-gradient(135deg, var(--gold), #b8941f);
+  color: #0a0a0f; font-weight: 800; font-size: 0.95rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: all var(--transition);
+}
+.nextBtn:hover:not(.nextBtnDisabled) { box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+.nextBtnDisabled { opacity: 0.45; cursor: not-allowed; }
+.backBtn {
+  color: var(--muted2); font-size: 0.9rem; font-weight: 500;
+  transition: color var(--transition);
+}
+.backBtn:hover { color: var(--text); }
+.resetBtn {
+  padding: 0.75rem 2rem; border-radius: 8px;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--muted2); font-weight: 600;
+  transition: all var(--transition); margin: 0 auto;
+}
+.resetBtn:hover { color: var(--text); border-color: var(--muted); }
+
+.spinner {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.2); border-top-color: #0a0a0f;
+  animation: spin 0.6s linear infinite; display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 600px) {
+  .inner { padding: 1.5rem 1rem 4rem; }
+  .filmGrid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .questionsGrid { grid-template-columns: 1fr; }
+  .recoGrid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}

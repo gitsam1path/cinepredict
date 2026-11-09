@@ -1,0 +1,17 @@
+# Dépendances (se réinstallent avec npm install / pip install)
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build
+frontend/dist/
+
+# Secrets : ne jamais publier la clé TMDb
+.env
+
+# Divers
+.DS_Store
+Thumbs.db
+*.log

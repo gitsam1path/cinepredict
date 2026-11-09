@@ -1,0 +1,112 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 2.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: background var(--transition), backdrop-filter var(--transition);
+  background: linear-gradient(to bottom, rgba(8,8,16,0.95), transparent);
+}
+.nav.scrolled {
+  background: rgba(8,8,16,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.logoIcon { font-size: 1.4rem; }
+.logoText {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+.logoText span { color: var(--gold); }
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  flex: 1;
+}
+.link {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted2);
+  transition: color var(--transition), background var(--transition);
+}
+.link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.active { color: var(--gold) !important; }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.iconBtn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted2);
+  transition: color var(--transition), background var(--transition);
+}
+.iconBtn:hover { color: var(--text); background: var(--bg3); }
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 0.75rem;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+.searchInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  padding: 0.4rem 0;
+}
+.searchInput::placeholder { color: var(--muted); }
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  padding: 0.75rem 1rem 1rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.mobileLink {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  color: var(--muted2);
+  border-radius: 8px;
+}
+.mobileLink:hover { color: var(--text); background: var(--bg3); }
+
+@media (max-width: 768px) {
+  .nav { padding: 0 1rem; }
+  .links { display: none; }
+  .mobileMenu { display: flex; }
+}

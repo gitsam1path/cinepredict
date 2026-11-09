@@ -1,0 +1,197 @@
+.page { min-height: 100vh; padding-top: 80px; }
+.inner { max-width: 1300px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
+
+.header { margin-bottom: 2rem; }
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem; letter-spacing: 1px; color: var(--text);
+}
+.sub { color: var(--muted2); margin-top: 4px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Form */
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.bloc {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+.blocTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--gold); margin-bottom: 1.25rem;
+}
+.blocGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.fieldLabel { font-size: 0.82rem; font-weight: 500; color: var(--muted2); }
+.fieldHint  { font-size: 0.72rem; color: var(--muted); margin-top: -4px; }
+
+.sliderWrap { display: flex; align-items: center; gap: 0.75rem; }
+.slider { flex: 1; accent-color: var(--gold); height: 4px; }
+.sliderVal {
+  font-size: 0.85rem; font-weight: 700; color: var(--gold);
+  min-width: 72px; text-align: right;
+}
+
+.numWrap {
+  display: flex; align-items: center;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+  transition: border-color var(--transition);
+}
+.numWrap:focus-within { border-color: var(--gold); }
+.numInput {
+  flex: 1; background: none; border: none; outline: none;
+  color: var(--text); font-size: 0.88rem;
+  padding: 0.45rem 0.75rem;
+  -moz-appearance: textfield;
+}
+.numInput::-webkit-inner-spin-button { display: none; }
+.numPrefix, .numSuffix {
+  padding: 0 0.6rem;
+  color: var(--muted); font-size: 0.8rem;
+  background: var(--bg); border-left: 1px solid var(--border);
+}
+.numPrefix { border-left: none; border-right: 1px solid var(--border); }
+
+.profitDisplay {
+  font-size: 1.3rem; font-weight: 800;
+  padding: 0.35rem 0;
+}
+
+.monthGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+}
+.monthBtn {
+  padding: 5px 4px; border-radius: 6px; font-size: 0.72rem; font-weight: 500;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--muted2); transition: all var(--transition);
+}
+.monthBtn:hover { color: var(--text); border-color: var(--muted); }
+.monthActive {
+  background: rgba(212,175,55,0.15) !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+.toggleGroup { display: flex; gap: 6px; flex-wrap: wrap; }
+.toggleBtn {
+  padding: 6px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 500;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--muted2); transition: all var(--transition);
+}
+.toggleBtn:hover { color: var(--text); }
+.toggleActive {
+  background: rgba(212,175,55,0.15) !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important; font-weight: 700;
+}
+
+.submitBtn {
+  width: 100%; padding: 0.9rem;
+  background: linear-gradient(135deg, var(--gold), #b8941f);
+  color: #0a0a0f; font-weight: 800; font-size: 1rem;
+  border-radius: var(--radius); display: flex;
+  align-items: center; justify-content: center; gap: 0.5rem;
+  transition: all var(--transition);
+}
+.submitBtn:hover:not(:disabled) { box-shadow: 0 6px 24px rgba(212,175,55,0.4); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.2); border-top-color: #0a0a0f;
+  animation: spin 0.6s linear infinite; display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error {
+  color: var(--red); font-size: 0.85rem;
+  background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.3);
+  border-radius: 8px; padding: 0.75rem;
+}
+
+/* Results */
+.results {}
+.resultsSticky { position: sticky; top: 84px; }
+.resultsTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700; color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.resultsEmpty {
+  background: var(--bg2); border: 1px dashed var(--border);
+  border-radius: var(--radius-lg); padding: 2.5rem 1.5rem;
+  text-align: center; color: var(--muted); font-size: 0.88rem;
+}
+.emptyIcon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+.resultCards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.resultCard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0.9rem 1.1rem;
+  transition: border-color var(--transition);
+}
+.resultYes {
+  border-color: rgba(80,250,123,0.3);
+  background: rgba(80,250,123,0.04);
+}
+
+.resultTop {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 0.6rem;
+}
+.resultGenre { font-weight: 700; font-size: 1rem; }
+.resultVerdict { font-size: 0.82rem; font-weight: 700; }
+.verdictYes { color: #50fa7b; }
+.verdictNo  { color: var(--muted); }
+
+.resultBarRow { display: flex; align-items: center; gap: 0.6rem; }
+.resultBarBg {
+  flex: 1; height: 6px; background: var(--bg);
+  border-radius: 3px; overflow: hidden;
+}
+.resultBarFill { height: 100%; border-radius: 3px; }
+.resultPct { font-size: 0.78rem; color: var(--muted2); min-width: 32px; text-align: right; }
+
+.summary {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.9rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.summaryLabel { font-size: 0.82rem; color: var(--muted2); }
+.summaryBadges { display: flex; flex-wrap: wrap; gap: 6px; }
+.summaryBadge {
+  padding: 3px 10px; border-radius: 20px; border: 1px solid;
+  font-size: 0.78rem; font-weight: 600;
+}
+
+.resetBtn {
+  align-self: flex-end; color: var(--muted); font-size: 0.8rem;
+  transition: color var(--transition);
+}
+.resetBtn:hover { color: var(--text); }
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  .resultsSticky { position: static; }
+}
+@media (max-width: 600px) {
+  .inner { padding: 1.5rem 1rem 3rem; }
+  .blocGrid { grid-template-columns: 1fr; }
+}
